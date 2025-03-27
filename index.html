@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colorful Love Phases</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fce4ec;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            color: white;
+            background-color: #ff4081;
+            padding: 50px;
+            border-radius: 10px;
+            width: 70%;
+            height: 80%;
+        }
+
+        .message {
+            font-size: 50px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .click-btn {
+            margin-top: 20px;
+            padding: 15px 30px;
+            background-color: #ff00ff;
+            color: white;
+            font-size: 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        .colorful-text {
+            font-size: 50px;
+            font-weight: bold;
+            margin-top: 30px;
+            display: none;
+            animation: fadeIn 2s ease-in-out;
+            color: #ffeb3b;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .heart {
+            font-size: 30px;
+            animation: heartBeat 1.5s infinite;
+        }
+
+        @keyframes heartBeat {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="message" id="message1">
+        Hello dear!
+    </div>
+    <button class="click-btn" id="clickButton1" onclick="nextPhase1()">Click here</button>
+
+    <div class="message" id="message2" style="display:none;">
+        Mouly, I love you so much! <span class="heart">❤️</span>
+    </div>
+    <button class="click-btn" id="clickButton2" style="display:none;" onclick="nextPhase2()">Click here</button>
+
+    <div class="message" id="message3" style="display:none;">
+        You are my Jaan! <span class="heart">❤️</span>
+    </div>
+    <button class="click-btn" id="clickButton3" style="display:none;" onclick="nextPhase3()">Click here</button>
+
+    <div class="message" id="message4" style="display:none;">
+        You are my Kolixa! <span class="heart">❤️</span>
+    </div>
+    <button class="click-btn" id="clickButton4" style="display:none;" onclick="nextPhase4()">Click here</button>
+
+    <div class="colorful-text" id="finalMessage" style="display:none;">
+        Ummmmaaaaahhhh! 💖💖💖
+    </div>
+</div>
+
+<script>
+    let currentPhase = 1;
+
+    function nextPhase1() {
+        document.getElementById("message1").style.display = "none";
+        document.getElementById("clickButton1").style.display = "none";
+        document.getElementById("message2").style.display = "block";
+        document.getElementById("clickButton2").style.display = "block";
+        currentPhase = 2;
+    }
+
+    function nextPhase2() {
+        document.getElementById("message2").style.display = "none";
+        document.getElementById("clickButton2").style.display = "none";
+        document.getElementById("message3").style.display = "block";
+        document.getElementById("clickButton3").style.display = "block";
+        currentPhase = 3;
+    }
+
+    function nextPhase3() {
+        document.getElementById("message3").style.display = "none";
+        document.getElementById("clickButton3").style.display = "none";
+        document.getElementById("message4").style.display = "block";
+        document.getElementById("clickButton4").style.display = "block";
+        currentPhase = 4;
+    }
+
+    function nextPhase4() {
+        document.getElementById("message4").style.display = "none";
+        document.getElementById("clickButton4").style.display = "none";
+        document.getElementById("finalMessage").style.display = "block";
+    }
+</script>
+
+</body>
+</html>
